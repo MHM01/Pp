@@ -1,0 +1,22 @@
+
+entity Subscriptionn {
+	id String
+}
+
+entity Topic {
+	id String,
+	name String
+}
+
+entity Consumer {
+	id String,
+	name String
+}
+
+relationship OneToMany {
+	Consumer to Subscriptionn{id}
+}
+
+relationship OneToOne {
+	Subscriptionn{id} to Topic
+}
