@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="subscriptionn">
+      <h2 data-cy="subscriptionnDetailsHeading"><span jhiTranslate="ppApp.subscriptionn.detail.title">Subscriptionn</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ppApp.subscriptionn.id">Id</span></dt>
+        <dd>
+          <span>{{ subscriptionn.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ppApp.subscriptionn.id">Id</span></dt>
+        <dd>
+          <div *ngIf="subscriptionn.id">
+            <a [routerLink]="['/topic', subscriptionn.id.id, 'view']">{{ subscriptionn.id.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="ppApp.subscriptionn.id">Id</span></dt>
+        <dd>
+          <div *ngIf="subscriptionn.id">
+            <a [routerLink]="['/consumer', subscriptionn.id.id, 'view']">{{ subscriptionn.id.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/subscriptionn', subscriptionn.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
