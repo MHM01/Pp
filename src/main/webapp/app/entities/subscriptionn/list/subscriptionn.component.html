@@ -1,0 +1,103 @@
+<div>
+  <h2 id="page-heading" data-cy="SubscriptionnHeading">
+    <span jhiTranslate="ppApp.subscriptionn.home.title">Subscriptionns</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ppApp.subscriptionn.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-subscriptionn"
+        [routerLink]="['/subscriptionn/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="ppApp.subscriptionn.home.createLabel"> Create a new Subscriptionn </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="subscriptionns?.length === 0">
+    <span jhiTranslate="ppApp.subscriptionn.home.notFound">No Subscriptionns found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="subscriptionns && subscriptionns.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="ppApp.subscriptionn.id">Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="id.id">
+            <div class="d-flex">
+              <span jhiTranslate="ppApp.subscriptionn.id">Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="id.id">
+            <div class="d-flex">
+              <span jhiTranslate="ppApp.subscriptionn.id">Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subscriptionn of subscriptionns; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/subscriptionn', subscriptionn.id, 'view']">{{ subscriptionn.id }}</a>
+          </td>
+          <td>
+            <div *ngIf="subscriptionn.id">
+              <a [routerLink]="['/topic', subscriptionn.id.id, 'view']">{{ subscriptionn.id.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="subscriptionn.id">
+              <a [routerLink]="['/consumer', subscriptionn.id.id, 'view']">{{ subscriptionn.id.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/subscriptionn', subscriptionn.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/subscriptionn', subscriptionn.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(subscriptionn)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309142232",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "subscriptionn",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Subscriptionn",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "topic",
+      "ownerSide": true,
+      "relationshipName": "id",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "consumer",
+      "otherEntityRelationshipName": "subscriptionn",
+      "relationshipName": "id",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

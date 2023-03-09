@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309142233",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "topic",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Topic",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

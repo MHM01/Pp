@@ -1,0 +1,25 @@
+{
+  "ppApp": {
+    "subscriptionn": {
+      "home": {
+        "title": "Subscriptionns",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Subscriptionn",
+        "createOrEditLabel": "Create or edit a Subscriptionn",
+        "notFound": "No Subscriptionns found"
+      },
+      "created": "A new Subscriptionn is created with identifier {{ param }}",
+      "updated": "A Subscriptionn is updated with identifier {{ param }}",
+      "deleted": "A Subscriptionn is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Subscriptionn {{ id }}?"
+      },
+      "detail": {
+        "title": "Subscriptionn"
+      },
+      "id": "Id",
+      "id": "Id",
+      "id": "Id"
+    }
+  }
+}

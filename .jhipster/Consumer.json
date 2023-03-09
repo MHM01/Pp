@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309142234",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "consumer",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Consumer",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "subscriptionn",
+      "otherEntityRelationshipName": "id",
+      "relationshipName": "subscriptionn",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}
